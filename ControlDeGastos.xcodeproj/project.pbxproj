@@ -12,6 +12,14 @@
 		9C6828CD27A85D7D00CA0C8E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6828CC27A85D7D00CA0C8E /* MainViewController.swift */; };
 		9C6828D227A85D7F00CA0C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6828D127A85D7F00CA0C8E /* Assets.xcassets */; };
 		9C6828D527A85D7F00CA0C8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6828D327A85D7F00CA0C8E /* LaunchScreen.storyboard */; };
+		9C6828DE27A85F5C00CA0C8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6828DD27A85F5C00CA0C8E /* LoginViewController.swift */; };
+		9C6828E027A9B7EB00CA0C8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6828DF27A9B7EB00CA0C8E /* SignUpViewController.swift */; };
+		9C6828FD27AA18E100CA0C8E /* ControlDeGastos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C6828FB27AA18E100CA0C8E /* ControlDeGastos.xcdatamodeld */; };
+		9C68290727AA1BF700CA0C8E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290627AA1BF700CA0C8E /* CoreDataStack.swift */; };
+		9C68290C27AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290827AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift */; };
+		9C68290D27AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290927AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift */; };
+		9C68290E27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */; };
+		9C68290F27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		9C6828D127A85D7F00CA0C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C6828D427A85D7F00CA0C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C6828D627A85D7F00CA0C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C6828DD27A85F5C00CA0C8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9C6828DF27A9B7EB00CA0C8E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9C6828FC27AA18E100CA0C8E /* ControlDeGastos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ControlDeGastos.xcdatamodel; sourceTree = "<group>"; };
+		9C68290627AA1BF700CA0C8E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		9C68290827AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9C68290927AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Finanzas+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Finanzas+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +54,12 @@
 		9C6828BC27A85D7D00CA0C8E = {
 			isa = PBXGroup;
 			children = (
+				9C68290827AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift */,
+				9C68290927AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift */,
+				9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */,
+				9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */,
+				9C68290627AA1BF700CA0C8E /* CoreDataStack.swift */,
+				9C6828FB27AA18E100CA0C8E /* ControlDeGastos.xcdatamodeld */,
 				9C6828C727A85D7D00CA0C8E /* ControlDeGastos */,
 				9C6828C627A85D7D00CA0C8E /* Products */,
 			);
@@ -56,12 +78,22 @@
 			children = (
 				9C6828C827A85D7D00CA0C8E /* AppDelegate.swift */,
 				9C6828CA27A85D7D00CA0C8E /* SceneDelegate.swift */,
-				9C6828CC27A85D7D00CA0C8E /* MainViewController.swift */,
+				9C6828DC27A85F2B00CA0C8E /* Controllers */,
 				9C6828D127A85D7F00CA0C8E /* Assets.xcassets */,
 				9C6828D327A85D7F00CA0C8E /* LaunchScreen.storyboard */,
 				9C6828D627A85D7F00CA0C8E /* Info.plist */,
 			);
 			path = ControlDeGastos;
+			sourceTree = "<group>";
+		};
+		9C6828DC27A85F2B00CA0C8E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C6828CC27A85D7D00CA0C8E /* MainViewController.swift */,
+				9C6828DD27A85F5C00CA0C8E /* LoginViewController.swift */,
+				9C6828DF27A9B7EB00CA0C8E /* SignUpViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +166,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6828DE27A85F5C00CA0C8E /* LoginViewController.swift in Sources */,
+				9C6828FD27AA18E100CA0C8E /* ControlDeGastos.xcdatamodeld in Sources */,
 				9C6828CD27A85D7D00CA0C8E /* MainViewController.swift in Sources */,
+				9C68290F27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift in Sources */,
+				9C68290D27AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift in Sources */,
 				9C6828C927A85D7D00CA0C8E /* AppDelegate.swift in Sources */,
+				9C68290E27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift in Sources */,
 				9C6828CB27A85D7D00CA0C8E /* SceneDelegate.swift in Sources */,
+				9C68290727AA1BF700CA0C8E /* CoreDataStack.swift in Sources */,
+				9C68290C27AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift in Sources */,
+				9C6828E027A9B7EB00CA0C8E /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +384,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C6828FB27AA18E100CA0C8E /* ControlDeGastos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C6828FC27AA18E100CA0C8E /* ControlDeGastos.xcdatamodel */,
+			);
+			currentVersion = 9C6828FC27AA18E100CA0C8E /* ControlDeGastos.xcdatamodel */;
+			path = ControlDeGastos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9C6828BD27A85D7D00CA0C8E /* Project object */;
 }

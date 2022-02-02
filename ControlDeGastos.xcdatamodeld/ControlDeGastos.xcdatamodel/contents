@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Finanzas" representedClassName="Finanzas" syncable="YES">
+        <attribute name="egresos" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="ingresos" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="finances" inverseEntity="UserInfo"/>
+    </entity>
+    <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
+        <attribute name="email" attributeType="String"/>
+        <attribute name="password" attributeType="String"/>
+        <relationship name="finances" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Finanzas" inverseName="user" inverseEntity="Finanzas"/>
+    </entity>
+    <elements>
+        <element name="UserInfo" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Finanzas" positionX="200.6796875" positionY="-14.64453125" width="128" height="88"/>
+    </elements>
+</model>
