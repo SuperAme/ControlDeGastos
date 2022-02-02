@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowsScene = (scene as? UIWindowScene) else { return }
         let vc = LoginViewController()
+//        vc.managedContext = coreDataStack.managedContext
         let navVC = UINavigationController(rootViewController: vc)
         vc.title = "Control de gastos"
         

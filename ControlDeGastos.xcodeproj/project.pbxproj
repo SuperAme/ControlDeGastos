@@ -54,12 +54,6 @@
 		9C6828BC27A85D7D00CA0C8E = {
 			isa = PBXGroup;
 			children = (
-				9C68290827AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift */,
-				9C68290927AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift */,
-				9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */,
-				9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */,
-				9C68290627AA1BF700CA0C8E /* CoreDataStack.swift */,
-				9C6828FB27AA18E100CA0C8E /* ControlDeGastos.xcdatamodeld */,
 				9C6828C727A85D7D00CA0C8E /* ControlDeGastos */,
 				9C6828C627A85D7D00CA0C8E /* Products */,
 			);
@@ -76,6 +70,9 @@
 		9C6828C727A85D7D00CA0C8E /* ControlDeGastos */ = {
 			isa = PBXGroup;
 			children = (
+				9C8DAD9327AAF10500193CA5 /* Models */,
+				9C68290627AA1BF700CA0C8E /* CoreDataStack.swift */,
+				9C8DAD9427AAF11700193CA5 /* Db */,
 				9C6828C827A85D7D00CA0C8E /* AppDelegate.swift */,
 				9C6828CA27A85D7D00CA0C8E /* SceneDelegate.swift */,
 				9C6828DC27A85F2B00CA0C8E /* Controllers */,
@@ -94,6 +91,25 @@
 				9C6828DF27A9B7EB00CA0C8E /* SignUpViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9C8DAD9327AAF10500193CA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C68290827AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift */,
+				9C68290927AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift */,
+				9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */,
+				9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C8DAD9427AAF11700193CA5 /* Db */ = {
+			isa = PBXGroup;
+			children = (
+				9C6828FB27AA18E100CA0C8E /* ControlDeGastos.xcdatamodeld */,
+			);
+			path = Db;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
