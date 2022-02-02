@@ -20,6 +20,7 @@
 		9C68290D27AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290927AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift */; };
 		9C68290E27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */; };
 		9C68290F27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */; };
+		9C8DAD9627AAFCB900193CA5 /* CryptoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DAD9527AAFCB900193CA5 /* CryptoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9C68290927AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Finanzas+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Finanzas+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9C8DAD9527AAFCB900193CA5 /* CryptoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				9C6828CC27A85D7D00CA0C8E /* MainViewController.swift */,
 				9C6828DD27A85F5C00CA0C8E /* LoginViewController.swift */,
 				9C6828DF27A9B7EB00CA0C8E /* SignUpViewController.swift */,
+				9C8DAD9527AAFCB900193CA5 /* CryptoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				9C6828CB27A85D7D00CA0C8E /* SceneDelegate.swift in Sources */,
 				9C68290727AA1BF700CA0C8E /* CoreDataStack.swift in Sources */,
 				9C68290C27AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift in Sources */,
+				9C8DAD9627AAFCB900193CA5 /* CryptoController.swift in Sources */,
 				9C6828E027A9B7EB00CA0C8E /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

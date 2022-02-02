@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class SignUpViewController: UIViewController {
+    
+    var managedContext: NSManagedObjectContext!
+    var encryptController = CryptoController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,45 +20,49 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func onSignUpButtonTouch() {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            let encryptedPassword = encryptController.encryptData(password)
+            print(encryptedPassword!)
+        }
         print("onSignUpButtonTouch")
     }
     
     @objc func onBackButtonTouch() {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    let emailTextField: UITextField = {
+        let mailTF = UITextField()
+        mailTF.translatesAutoresizingMaskIntoConstraints = false
+        mailTF.placeholder = "Write your Email"
+        mailTF.textAlignment = .center
+        mailTF.layer.borderColor = UIColor.darkGray.cgColor
+        mailTF.layer.borderWidth = 1.0
+        return mailTF
+    }()
+    
+    let passwordTextField: UITextField = {
+        let passTF = UITextField()
+        passTF.translatesAutoresizingMaskIntoConstraints = false
+        passTF.placeholder = "Write your password"
+        passTF.isSecureTextEntry = true
+        passTF.textAlignment = .center
+        passTF.layer.borderColor = UIColor.darkGray.cgColor
+        passTF.layer.borderWidth = 1.0
+        return passTF
+    }()
+    
+    let signUpButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemBlue
+        button.setTitle("Create User", for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(onSignUpButtonTouch), for: .touchUpInside)
+        return button
+    }()
 
     func setupUI() {
-        
-        let emailTextField: UITextField = {
-            let mailTF = UITextField()
-            mailTF.translatesAutoresizingMaskIntoConstraints = false
-            mailTF.placeholder = "Write your Email"
-            mailTF.textAlignment = .center
-            mailTF.layer.borderColor = UIColor.darkGray.cgColor
-            mailTF.layer.borderWidth = 1.0
-            return mailTF
-        }()
-        
-        let passwordTextField: UITextField = {
-            let passTF = UITextField()
-            passTF.translatesAutoresizingMaskIntoConstraints = false
-            passTF.placeholder = "Write your password"
-            passTF.isSecureTextEntry = true
-            passTF.textAlignment = .center
-            passTF.layer.borderColor = UIColor.darkGray.cgColor
-            passTF.layer.borderWidth = 1.0
-            return passTF
-        }()
-        
-        let signUpButton: UIButton = {
-            let button = UIButton()
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.backgroundColor = .systemBlue
-            button.setTitle("Create User", for: .normal)
-            button.tintColor = .white
-            button.addTarget(self, action: #selector(onSignUpButtonTouch), for: .touchUpInside)
-            return button
-        }()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(onBackButtonTouch))
         
