@@ -12,17 +12,22 @@ class SignUpViewController: UIViewController {
     
     var managedContext: NSManagedObjectContext!
     var encryptController = CryptoController()
+    var validator = EmailValidatorController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     @objc func onSignUpButtonTouch() {
         if let email = emailTextField.text, let password = passwordTextField.text {
-            let encryptedPassword = encryptController.encryptData(password)
-            print(encryptedPassword!)
+            if validator.isValidEmail(email) {
+                let encryptedPassword = encryptController.encryptData(password)
+                //TODO Insert CoreData
+            }
         }
         print("onSignUpButtonTouch")
     }
@@ -85,4 +90,26 @@ class SignUpViewController: UIViewController {
         ])
     }
 
+}
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if validator.isValidEmail(emailTextField.text!) {
+            emailTextField.layer.borderColor = UIColor.darkGray.cgColor
+            passwordTextField.layer.borderColor = UIColor.darkGray.cgColor
+        } else {
+            emailTextField.layer.borderColor = UIColor.systemRed.cgColor
+            passwordTextField.layer.borderColor = UIColor.darkGray.cgColor
+        }
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case emailTextField:
+            emailTextField.layer.borderColor = UIColor.systemBlue.cgColor
+        case passwordTextField:
+            passwordTextField.layer.borderColor = UIColor.systemBlue.cgColor
+        default:
+            emailTextField.layer.borderColor = UIColor.systemPink.cgColor
+            passwordTextField.layer.borderColor = UIColor.systemPink.cgColor
+        }
+    }
 }

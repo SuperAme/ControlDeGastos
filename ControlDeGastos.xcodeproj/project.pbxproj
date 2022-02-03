@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C12EC5E27AB507900CCC766 /* EmailValidatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C12EC5D27AB507900CCC766 /* EmailValidatorController.swift */; };
 		9C6828C927A85D7D00CA0C8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6828C827A85D7D00CA0C8E /* AppDelegate.swift */; };
 		9C6828CB27A85D7D00CA0C8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6828CA27A85D7D00CA0C8E /* SceneDelegate.swift */; };
 		9C6828CD27A85D7D00CA0C8E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6828CC27A85D7D00CA0C8E /* MainViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C12EC5D27AB507900CCC766 /* EmailValidatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorController.swift; sourceTree = "<group>"; };
 		9C6828C527A85D7D00CA0C8E /* ControlDeGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControlDeGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6828C827A85D7D00CA0C8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C6828CA27A85D7D00CA0C8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				9C6828DD27A85F5C00CA0C8E /* LoginViewController.swift */,
 				9C6828DF27A9B7EB00CA0C8E /* SignUpViewController.swift */,
 				9C8DAD9527AAFCB900193CA5 /* CryptoController.swift */,
+				9C12EC5D27AB507900CCC766 /* EmailValidatorController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				9C68290D27AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift in Sources */,
 				9C6828C927A85D7D00CA0C8E /* AppDelegate.swift in Sources */,
 				9C68290E27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift in Sources */,
+				9C12EC5E27AB507900CCC766 /* EmailValidatorController.swift in Sources */,
 				9C6828CB27A85D7D00CA0C8E /* SceneDelegate.swift in Sources */,
 				9C68290727AA1BF700CA0C8E /* CoreDataStack.swift in Sources */,
 				9C68290C27AA1E5100CA0C8E /* UserInfo+CoreDataClass.swift in Sources */,
