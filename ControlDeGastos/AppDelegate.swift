@@ -11,10 +11,8 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    lazy var coreDataStack = CoreDataStack(modelName: "ControlDeGastos")
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        LoginViewController().managedContext = coreDataStack.managedContext
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         return true
     }
 
@@ -31,15 +29,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        coreDataStack.saveContext()
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        coreDataStack.saveContext()
-    }
-
-
 }
 

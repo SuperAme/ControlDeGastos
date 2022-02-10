@@ -10,7 +10,7 @@ import CoreData
 
 class SignUpViewController: UIViewController {
     
-    var managedContext: NSManagedObjectContext!
+    private let manager = CoreDataStack()
     var encryptController = CryptoController()
     var validator = EmailValidatorController()
 
@@ -25,11 +25,11 @@ class SignUpViewController: UIViewController {
     @objc func onSignUpButtonTouch() {
         if let email = emailTextField.text, let password = passwordTextField.text {
             if validator.isValidEmail(email) {
-                let encryptedPassword = encryptController.encryptData(password)
-                //TODO Insert CoreData
+                guard let encryptedPassword = encryptController.encryptData(password) else { return }
+                manager.createUser(mail: email, pass: encryptedPassword, ingreso: 0.0, egresos: 0.0)
+                
             }
         }
-        print("onSignUpButtonTouch")
     }
     
     @objc func onBackButtonTouch() {

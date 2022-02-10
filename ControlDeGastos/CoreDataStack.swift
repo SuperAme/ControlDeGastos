@@ -10,33 +10,51 @@ import CoreData
 import UIKit
 
 class CoreDataStack {
-    private let modelName: String
     
-    lazy var managedContext: NSManagedObjectContext = {
-        return self.storeContainer.viewContext
-    }()
-    
-    init(modelName: String) {
-        self.modelName = modelName
-    }
-    
-    private lazy var storeContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: self.modelName)
-        container.loadPersistentStores { (storeDescription, error) in
+    private static var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "ControlDeGastos")
+        container.loadPersistentStores { (desc, error) in
             if let error = error {
-                print("Unresolved error \(error.localizedDescription)")
+                print("Error loading store \(desc) - \(error)")
+                return
             }
+            print("Database ready!")
         }
         return container
     }()
     
-    func saveContext() {
-        guard managedContext.hasChanges else { return }
+    var context: NSManagedObjectContext {
+        return Self.persistentContainer.viewContext
+    }
+    
+//    private func setupDatabase() {
+//        container.loadPersistentStores { (desc, error) in
+//            if let error = error {
+//                print("Error loading store \(desc) - \(error)")
+//                return
+//            }
+//            print("Database ready!")
+//        }
+//
+//    }
+    
+    func createUser(mail: String, pass: String, ingreso: Float, egresos: Float) {
+        let context = context
+        
+        let user = UserInfo(context: context)
+        user.email = mail
+        user.password = pass
+        
+        let finances = Finanzas(context: context)
+        finances.egresos = egresos
+        finances.ingresos = ingreso
+        finances.user = user
+        
         
         do {
-            try managedContext.save()
-        } catch let error {
-            print("Unresolved error \(error.localizedDescription)")
+            try context.save()
+        } catch {
+            print("Error saving user - \(error)")
         }
     }
 }

@@ -10,7 +10,7 @@ import CoreData
 
 class LoginViewController: UIViewController {
     
-    var managedContext: NSManagedObjectContext!
+    private let manager = CoreDataStack()
 
     override func viewDidLoad() {
         super.viewDidLoad()
