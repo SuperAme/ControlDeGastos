@@ -57,5 +57,35 @@ class CoreDataStack {
             print("Error saving user - \(error)")
         }
     }
+    
+    func getInfoFromPass(encriptedPass: String) -> [UserInfo]? {
+        
+        let context = context
+        let query = "test@test.com"
+        
+        let fetchRequest: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "email LIKE %@", query)
+        
+        do {
+            let result = try context.fetch(UserInfo.fetchRequest())
+            return result
+        } catch let error{
+            return nil
+        }
+        
+//        let result = try! context.fetch(UserInfo.fetchRequest())
+        
+//        let fetchRequest: NSFetchRequest<UserInfo>
+//        fetchRequest = UserInfo.fetchRequest()
+//        let resultPredicate = NSPredicate(format: "email LIKE %@", query)
+//
+//        fetchRequest.predicate = NSPredicate(format: "password LIKE %@", "ee26b0dd4af7e749aa1a8ee3c10ae9923f618980772e473f8819a5d4940e0db27ac185f8a0e1d5f84f88bc887fd67b143732c304cc5fa9ad8e6f57f50028a8ff")
+//
+//        let context = context
+//
+//        let objects = try! context.fetch(fetchRequest)
+//
+//        print(objects)
+    }
 }
 

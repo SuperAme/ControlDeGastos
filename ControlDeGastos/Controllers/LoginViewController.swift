@@ -20,66 +20,72 @@ class LoginViewController: UIViewController {
     
     @objc func onLoginTouch() {
         print("onLoginTouch")
-        self.navigationController?.pushViewController(MainViewController(), animated: true)
+        if let password = passwordTextField.text {
+//            print(password)
+            let data = manager.getInfoFromPass(encriptedPass: password)
+            print(data?.first?.email)
+        }
+        
+//        self.navigationController?.pushViewController(MainViewController(), animated: true)
     }
     
     @objc func onCreateUserTouch() {
         self.navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
     
+    let emailTextField: UITextField = {
+        let mailTF = UITextField()
+        mailTF.translatesAutoresizingMaskIntoConstraints = false
+        mailTF.placeholder = "Write your Email"
+        mailTF.textAlignment = .center
+        mailTF.layer.borderColor = UIColor.darkGray.cgColor
+        mailTF.layer.borderWidth = 1.0
+        return mailTF
+    }()
+    
+    let passwordTextField: UITextField = {
+        let passTF = UITextField()
+        passTF.translatesAutoresizingMaskIntoConstraints = false
+        passTF.placeholder = "Write your password"
+        passTF.isSecureTextEntry = true
+        passTF.textAlignment = .center
+        passTF.layer.borderColor = UIColor.darkGray.cgColor
+        passTF.layer.borderWidth = 1.0
+        return passTF
+    }()
+    
+    let loginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemBlue
+        button.setTitle("Login", for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(onLoginTouch), for: .touchUpInside)
+        return button
+    }()
+    
+    let createUserButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .systemBlue
+        
+        let attributesForButtonText: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 14),
+            .foregroundColor: UIColor.systemBlue,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
+        
+        let attributedButtonTitle = NSMutableAttributedString(
+            string: "Create User",
+            attributes: attributesForButtonText
+        )
+        
+        button.setAttributedTitle(attributedButtonTitle, for: .normal)
+        button.addTarget(self, action: #selector(onCreateUserTouch), for: .touchUpInside)
+        return button
+    }()
+    
     func setupLoginUI() {
-        
-        let emailTextField: UITextField = {
-            let mailTF = UITextField()
-            mailTF.translatesAutoresizingMaskIntoConstraints = false
-            mailTF.placeholder = "Write your Email"
-            mailTF.textAlignment = .center
-            mailTF.layer.borderColor = UIColor.darkGray.cgColor
-            mailTF.layer.borderWidth = 1.0
-            return mailTF
-        }()
-        
-        let passwordTextField: UITextField = {
-            let passTF = UITextField()
-            passTF.translatesAutoresizingMaskIntoConstraints = false
-            passTF.placeholder = "Write your password"
-            passTF.isSecureTextEntry = true
-            passTF.textAlignment = .center
-            passTF.layer.borderColor = UIColor.darkGray.cgColor
-            passTF.layer.borderWidth = 1.0
-            return passTF
-        }()
-        
-        let loginButton: UIButton = {
-            let button = UIButton()
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.backgroundColor = .systemBlue
-            button.setTitle("Login", for: .normal)
-            button.tintColor = .white
-            button.addTarget(self, action: #selector(onLoginTouch), for: .touchUpInside)
-            return button
-        }()
-        
-        let createUserButton: UIButton = {
-            let button = UIButton()
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.tintColor = .systemBlue
-            
-            let attributesForButtonText: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 14),
-                .foregroundColor: UIColor.systemBlue,
-                .underlineStyle: NSUnderlineStyle.single.rawValue
-            ]
-            
-            let attributedButtonTitle = NSMutableAttributedString(
-                string: "Create User",
-                attributes: attributesForButtonText
-            )
-            
-            button.setAttributedTitle(attributedButtonTitle, for: .normal)
-            button.addTarget(self, action: #selector(onCreateUserTouch), for: .touchUpInside)
-            return button
-        }()
         
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
