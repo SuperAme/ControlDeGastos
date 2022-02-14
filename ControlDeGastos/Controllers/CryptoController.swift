@@ -14,7 +14,9 @@ class CryptoController {
         let hashed = SHA512.hash(data: dataToEncrypt)
         return hashed.compactMap { String(format: "%02x", $0) }.joined()
     }
-    func compareEncryptedData(_ data: String) -> Bool {
-        return true
+    
+    func compareEncryptedData(_ passwordToCompare: String, _ passwordSaved: String) -> Bool {
+        let comparisionResult = passwordToCompare == passwordSaved ? true : false
+        return comparisionResult
     }
 }

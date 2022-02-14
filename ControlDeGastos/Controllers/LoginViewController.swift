@@ -11,6 +11,7 @@ import CoreData
 class LoginViewController: UIViewController {
     
     private let manager = CoreDataStack()
+    private let cryptoManager = CryptoController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +20,18 @@ class LoginViewController: UIViewController {
     }
     
     @objc func onLoginTouch() {
-        print("onLoginTouch")
         if let password = passwordTextField.text {
-//            print(password)
-            let data = manager.getInfoFromPass(encriptedPass: password)
-            print(data?.first?.email)
+            guard let encryptedPassword = cryptoManager.encryptData(password) else { return }
+            guard let dataFromCoreData = manager.getInfoFromPass(encriptedPass: encryptedPassword) else { return }
+            if let passwordFromCoreData = dataFromCoreData.first?.password {
+                let passwordsMatch = cryptoManager.compareEncryptedData(encryptedPassword, passwordFromCoreData)
+                if passwordsMatch {
+                    self.navigationController?.pushViewController(MainViewController(), animated: true)
+                } else {
+                    print("Passwords doesn't match")
+                }
+            }
         }
-        
-//        self.navigationController?.pushViewController(MainViewController(), animated: true)
     }
     
     @objc func onCreateUserTouch() {
