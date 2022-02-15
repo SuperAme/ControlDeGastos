@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc = LoginViewController()
 //        vc.managedContext = coreDataStack.managedContext
         let navVC = UINavigationController(rootViewController: vc)
-        vc.title = "Control de gastos"
         
         let window = UIWindow(windowScene: windowsScene)
         window.rootViewController = navVC

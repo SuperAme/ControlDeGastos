@@ -26,12 +26,32 @@ class LoginViewController: UIViewController {
             if let passwordFromCoreData = dataFromCoreData.first?.password {
                 let passwordsMatch = cryptoManager.compareEncryptedData(encryptedPassword, passwordFromCoreData)
                 if passwordsMatch {
-                    self.navigationController?.pushViewController(MainViewController(), animated: true)
+                    getTabBarController()
                 } else {
                     print("Passwords doesn't match")
                 }
             }
         }
+    }
+    
+    func getTabBarController() {
+        let tabBarVC = MainTabBarController()
+        let vc1 = UINavigationController(rootViewController: MainViewController())
+        let vc2 = UINavigationController(rootViewController: FinancesViewController())
+        
+        
+        tabBarVC.setViewControllers([vc1,vc2], animated: false)
+        
+        guard let items = tabBarVC.tabBar.items else { return }
+        
+        let icons = ["infinity", "dollarsign.circle"]
+        
+        for i in 0..<items.count {
+            items[i].image = UIImage(systemName: icons[i])
+        }
+        
+        self.navigationController?.pushViewController(tabBarVC, animated: true)
+        
     }
     
     @objc func onCreateUserTouch() {

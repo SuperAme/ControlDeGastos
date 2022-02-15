@@ -9,19 +9,22 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    func getSaldo() -> String {
+        return "Saldo"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
         setupUI()
     }
     
-    @objc func onLogOutTouch() {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
-    
     func setupUI() {
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .plain, target: self, action: #selector(onLogOutTouch))
+        view.backgroundColor = .white
+        
+//        self.navigationItem.hidesBackButton = true
+        
+//        let titulo = getSaldo()
+        title = "Control de gastos"
     }
 
 }
