@@ -63,10 +63,10 @@ class CoreDataStack {
         let context = context
         
         let fetchRequest: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "email LIKE %@", encriptedPass)
+        fetchRequest.predicate = NSPredicate(format: "password LIKE %@", encriptedPass)
         
         do {
-            let result = try context.fetch(UserInfo.fetchRequest())
+            let result = try context.fetch(fetchRequest)
             return result
         } catch let error{
             return nil

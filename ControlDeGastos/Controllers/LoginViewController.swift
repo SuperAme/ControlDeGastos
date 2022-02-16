@@ -22,14 +22,15 @@ class LoginViewController: UIViewController {
     @objc func onLoginTouch() {
         if let password = passwordTextField.text {
             guard let encryptedPassword = cryptoManager.encryptData(password) else { return }
-            guard let dataFromCoreData = manager.getInfoFromPass(encriptedPass: encryptedPassword) else { return }
-            if let passwordFromCoreData = dataFromCoreData.first?.password {
+            if let dataFromCoreData = manager.getInfoFromPass(encriptedPass: encryptedPassword), let passwordFromCoreData = dataFromCoreData.first?.password {
                 let passwordsMatch = cryptoManager.compareEncryptedData(encryptedPassword, passwordFromCoreData)
                 if passwordsMatch {
                     getTabBarController()
                 } else {
                     print("Passwords doesn't match")
                 }
+            } else {
+                print("Passwords doesn't match")
             }
         }
     }
