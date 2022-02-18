@@ -26,6 +26,26 @@ class MainTabBarController: UITabBarController {
     }
     
     @objc func onAddButtonTouch() {
-        print("Add pressed")
+        createAlert()
+    }
+    
+    func createAlert() {
+        let alert = UIAlertController(title: "Finanzas", message: "Inserta Cantidad", preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = "Ingresa cantidad"
+        }
+        alert.addAction(UIAlertAction(title: "Ingreso", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            print(textField?.text)
+            self.dismiss(animated: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Gasto", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            print(textField?.text)
+            self.dismiss(animated: true)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
