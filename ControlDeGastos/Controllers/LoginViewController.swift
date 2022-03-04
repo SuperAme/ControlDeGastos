@@ -20,12 +20,17 @@ class LoginViewController: UIViewController {
     }
     
     @objc func onLoginTouch() {
+        let vc = MainViewController()
         if let password = passwordTextField.text {
             guard let encryptedPassword = cryptoManager.encryptData(password) else { return }
             if let dataFromCoreData = manager.getInfoFromPass(encriptedPass: encryptedPassword), let passwordFromCoreData = dataFromCoreData.first?.password {
                 let passwordsMatch = cryptoManager.compareEncryptedData(encryptedPassword, passwordFromCoreData)
                 if passwordsMatch {
-                    getTabBarController()
+                    if let userData = dataFromCoreData.first {
+                        getTabBarController(with: userData)
+                        vc.userPasswordSelected = dataFromCoreData.first
+                    }
+                    
                 } else {
                     print("Passwords doesn't match")
                 }
@@ -35,10 +40,11 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func getTabBarController() {
+    func getTabBarController(with userData: UserInfo) {
         let tabBarVC = MainTabBarController()
         let vc1 = UINavigationController(rootViewController: MainViewController())
         let vc2 = UINavigationController(rootViewController: FinancesViewController())
+        tabBarVC.userPasswordSelected = userData
         
         
         tabBarVC.setViewControllers([vc1,vc2], animated: false)

@@ -8,6 +8,13 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var userPasswordSelected: UserInfo? {
+        didSet {
+//            loadFinances()
+//            print(userPasswordSelected)
+        }
+    }
 
     func getSaldo() -> String {
         return "Saldo"

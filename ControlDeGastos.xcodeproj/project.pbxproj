@@ -24,6 +24,7 @@
 		9C68290E27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */; };
 		9C68290F27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */; };
 		9C8DAD9627AAFCB900193CA5 /* CryptoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DAD9527AAFCB900193CA5 /* CryptoController.swift */; };
+		9C9EB71C27D1002400A44E63 /* GastosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9EB71B27D1002400A44E63 /* GastosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9C68290A27AA1E5100CA0C8E /* Finanzas+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Finanzas+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9C68290B27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Finanzas+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9C8DAD9527AAFCB900193CA5 /* CryptoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoController.swift; sourceTree = "<group>"; };
+		9C9EB71B27D1002400A44E63 /* GastosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				9C12EC5D27AB507900CCC766 /* EmailValidatorController.swift */,
 				9C59CAB927BACFF100752A5B /* FinancesViewController.swift */,
 				9C59CABB27BC23FD00752A5B /* MainTabBarController.swift */,
+				9C9EB71B27D1002400A44E63 /* GastosViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				9C59CABC27BC23FD00752A5B /* MainTabBarController.swift in Sources */,
 				9C6828CD27A85D7D00CA0C8E /* MainViewController.swift in Sources */,
 				9C68290F27AA1E5100CA0C8E /* Finanzas+CoreDataProperties.swift in Sources */,
+				9C9EB71C27D1002400A44E63 /* GastosViewController.swift in Sources */,
 				9C68290D27AA1E5100CA0C8E /* UserInfo+CoreDataProperties.swift in Sources */,
 				9C59CABA27BACFF100752A5B /* FinancesViewController.swift in Sources */,
 				9C6828C927A85D7D00CA0C8E /* AppDelegate.swift in Sources */,

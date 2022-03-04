@@ -9,6 +9,14 @@ import Foundation
 import UIKit
 
 class MainTabBarController: UITabBarController {
+    
+    var userPasswordSelected: UserInfo? {
+        didSet {
+//            loadFinances()
+            print(userPasswordSelected)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -26,26 +34,26 @@ class MainTabBarController: UITabBarController {
     }
     
     @objc func onAddButtonTouch() {
-        createAlert()
+        self.navigationController?.pushViewController(GastosViewController(), animated: true)
     }
     
-    func createAlert() {
-        let alert = UIAlertController(title: "Finanzas", message: "Inserta Cantidad", preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.placeholder = "Ingresa cantidad"
-        }
-        alert.addAction(UIAlertAction(title: "Ingreso", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0]
-            print(textField?.text)
-            self.dismiss(animated: true)
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Gasto", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0]
-            print(textField?.text)
-            self.dismiss(animated: true)
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
+//    func createAlert() {
+//        let alert = UIAlertController(title: "Finanzas", message: "Inserta Cantidad", preferredStyle: .alert)
+//        alert.addTextField { textField in
+//            textField.placeholder = "Ingresa cantidad"
+//        }
+//        alert.addAction(UIAlertAction(title: "Ingreso", style: .default, handler: { [weak alert] (_) in
+//            let textField = alert?.textFields![0]
+//            print(textField?.text)
+//            self.dismiss(animated: true)
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Gasto", style: .default, handler: { [weak alert] (_) in
+//            let textField = alert?.textFields![0]
+//            print(textField?.text)
+//            self.dismiss(animated: true)
+//        }))
+//
+//        self.present(alert, animated: true, completion: nil)
+//    }
 }
