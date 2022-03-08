@@ -13,7 +13,7 @@ class MainTabBarController: UITabBarController {
     var userPasswordSelected: UserInfo? {
         didSet {
 //            loadFinances()
-            print(userPasswordSelected)
+//            print(userPasswordSelected)
         }
     }
     
@@ -34,7 +34,9 @@ class MainTabBarController: UITabBarController {
     }
     
     @objc func onAddButtonTouch() {
-        self.navigationController?.pushViewController(GastosViewController(), animated: true)
+        let vc = GastosViewController()
+        vc.selectedUser = self.userPasswordSelected
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 //    func createAlert() {

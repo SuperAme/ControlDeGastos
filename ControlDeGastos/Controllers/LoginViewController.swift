@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
                 if passwordsMatch {
                     if let userData = dataFromCoreData.first {
                         getTabBarController(with: userData)
-                        vc.userPasswordSelected = dataFromCoreData.first
+                        vc.selectedUser = dataFromCoreData.first
                     }
                     
                 } else {
@@ -42,9 +42,11 @@ class LoginViewController: UIViewController {
     
     func getTabBarController(with userData: UserInfo) {
         let tabBarVC = MainTabBarController()
-        let vc1 = UINavigationController(rootViewController: MainViewController())
+        let mainVC = MainViewController()
+        let vc1 = UINavigationController(rootViewController: mainVC)
         let vc2 = UINavigationController(rootViewController: FinancesViewController())
         tabBarVC.userPasswordSelected = userData
+        mainVC.selectedUser = userData
         
         
         tabBarVC.setViewControllers([vc1,vc2], animated: false)

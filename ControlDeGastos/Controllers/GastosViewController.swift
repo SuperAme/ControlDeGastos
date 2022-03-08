@@ -10,15 +10,42 @@ import UIKit
 
 class GastosViewController: UIViewController {
     
+    private let manager = CoreDataStack()
     var selectedUser: UserInfo? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        print("User - \(selectedUser!)")
     }
     
     @objc func onAmountInsertButton() {
-        print("onAmountInsertButton")
+        let newFinance = Finanzas(context: manager.context)
+        newFinance.user = selectedUser!
+        
+        if let amountTF = amountTextField.text, var amountToInsert = Float(amountTF) {
+            if amountSegmentedControl.selectedSegmentIndex == 0 {
+                amountToInsert = amountToInsert * -1
+                
+                newFinance.ingresos = 0.0
+                newFinance.egresos = amountToInsert
+            } else {
+                
+                newFinance.ingresos = amountToInsert
+                newFinance.egresos = 0.0
+                
+            }
+            saveFinances()
+        }
+    }
+    
+    func saveFinances() {
+        do {
+            try manager.context.save()
+            print("Saved")
+        } catch {
+            print("Error Saving Finances")
+        }
     }
     
     let amountTextField: UITextField = {
@@ -36,6 +63,7 @@ class GastosViewController: UIViewController {
         amountSegCtrl.translatesAutoresizingMaskIntoConstraints = false
         amountSegCtrl.insertSegment(withTitle: "Gasto", at: 0, animated: true)
         amountSegCtrl.insertSegment(withTitle: "Ingreso", at: 1, animated: true)
+        amountSegCtrl.selectedSegmentIndex = 1
         return amountSegCtrl
     }()
     
@@ -72,4 +100,10 @@ class GastosViewController: UIViewController {
         ])
     }
     
+}
+
+extension UISegmentedControl {
+    func isDefaultValue() {
+        self.selectedSegmentIndex = 0
+    }
 }
